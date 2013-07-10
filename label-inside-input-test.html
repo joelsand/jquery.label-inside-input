@@ -13,20 +13,17 @@
     <!-- 3. Some example script for initializing the labels -->
     <script type="text/javascript">
         $(function () {
-            $('#example-a input[type=text]').inFieldLabel({
-                cssClass: 'infield',
+            $('#example-a input[type=text]').labelInsideInput({
                 tooltipPosition: 'right'
             });
 
-            $('#example-b input[type=text]').inFieldLabel({
+            $('#example-b input[type=text]').labelInsideInput({
                 labelAttr: 'data-label',
-                cssClass: 'infield',
                 tooltipPosition: 'left'
             });
 
-            $('#example-c input[type=text]').inFieldLabel({
+            $('#example-c input[type=text]').labelInsideInput({
                 labelAttr: 'data-label',
-                cssClass: 'infield',
                 tooltipPosition: 'right'
             });
 
