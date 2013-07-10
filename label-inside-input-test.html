@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Page</title>
+
+    <!-- 1. Include jQuery, of course -->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+    <!-- 2. Include both the css, and the js file. -->
+    <link type="text/css" rel="stylesheet" href="jquery.label-inside-input.css" />
+    <script type="text/javascript" src="jquery.label-inside-input.js"></script>
+
+    <!-- 3. Some example script for initializing the labels -->
+    <script type="text/javascript">
+        $(function () {
+            $('#example-a input[type=text]').inFieldLabel({
+                cssClass: 'infield',
+                tooltipPosition: 'right'
+            });
+
+            $('#example-b input[type=text]').inFieldLabel({
+                labelAttr: 'data-label',
+                cssClass: 'infield',
+                tooltipPosition: 'left'
+            });
+
+            $('#example-c input[type=text]').inFieldLabel({
+                labelAttr: 'data-label',
+                cssClass: 'infield',
+                tooltipPosition: 'right'
+            });
+
+        });
+    </script>
+
+    <style type="text/css">
+        /* test styles, no need for these in your application */
+        body {
+            font-family: Tahoma;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .content {
+            width: 960px;
+            text-align: left;
+            margin: 0px auto;
+        }
+
+        input {
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+
+        input[type=text] {
+            padding: .3em .5em;
+            border: 1px solid #e6e6e6;
+            -webkit-border-radius: 0.236em;
+            border-radius: 0.236em;
+            -moz-background-clip: padding;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            font-size: 0.9em;
+            height: 35px;
+            font-family: inherit;
+            outline: none;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            background: #fff;
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+            -webkit-box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        input[type=text]:focus {
+            border: 1px solid #d0d0d0;
+        }
+
+        .centered-div form {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h2>Tooltips on the right...</h2>
+            <form action="foobar.html" method="post" id="example-a">
+                <label>
+                    First Name
+                    <input type="text" name="FirstName" />
+                </label>
+                <br />
+                <label>
+                    Last Name
+                    <input type="text" name="LastName" />
+                </label>
+                <br />
+                <label>
+                    Favorite Color
+                    <input type="text" name="FavoriteColor" value="Blue" />
+                </label>
+                <br />
+                <input type="submit" value="Submit" />
+            </form>
+
+            <h2>Tooltips on the left, and getting text from data attribute...</h2>
+            <form action="foobar.html" method="post" id="example-b">
+                <input type="text" name="FirstName" data-label="First Name" />
+                <br />
+                <input type="text" name="LastName" data-label="Last Name" />
+                <br />
+                <input type="text" name="FavoriteColor" data-label="Favorite Color" value="Blue" />
+                <br />
+                <input type="submit" value="Submit" />
+            </form>
+
+            <h2>Inside a centered div, and having its own id's...</h2>
+            <div class="centered-div">
+                <form action="foobar.html" method="post" id="example-c">
+                    <input type="text" name="FirstName" id="example-c-firstname" data-label="First Name" />
+                    <br />
+                    <input type="text" name="LastName" id="example-c-lastname"  data-label="Last Name" />
+                    <br />
+                    <input type="text" name="FavoriteColor" id="example-c-favoritecolor"  data-label="Favorite Color" value="Blue" />
+                    <br />
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html>

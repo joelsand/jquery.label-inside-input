@@ -1,0 +1,39 @@
+﻿.infield-tooltip {
+    display: inline;
+    position: absolute;
+    padding: 8px;
+    background-color: #fafafa;
+    border: solid 1px #f0f0f0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.infield-tooltip label {
+    color: #777777;
+}
+
+.infield-label {
+    display: inline;
+}
+
+.infield-label span {
+    position: absolute;
+    color: #aaaaaa;
+    cursor: text;
+    padding: 4px 8px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.infield-label input {
+    z-index: 0;
+}
+
+/* Hack to remove Safari's extra padding. Remove if you don't care about pixel-perfection. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .infield-label input, .infield-label textarea, .infield-label select {
+        padding: 4px;
+    }
+}
